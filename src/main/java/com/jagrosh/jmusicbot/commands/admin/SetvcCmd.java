@@ -23,6 +23,7 @@ import com.jagrosh.jmusicbot.commands.AdminCommand;
 import com.jagrosh.jmusicbot.settings.Settings;
 import com.jagrosh.jmusicbot.utils.FormatUtil;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -56,7 +57,7 @@ public class SetvcCmd extends AdminCommand
         {
             List<VoiceChannel> list = event.getGuild().getVoiceChannels().stream()
                     .filter(c -> c.getName().toLowerCase().contains(event.getArgs().toLowerCase()))
-                    .toList();
+                    .collect(Collectors.toList());;
             if(list.isEmpty())
                 event.reply(event.getClient().getWarning()+" No Voice Channels found matching \""+event.getArgs()+"\"");
             else if (list.size()>1)
