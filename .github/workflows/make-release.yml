@@ -25,7 +25,7 @@ jobs:
           distribution: 'temurin'
           cache: 'none'
       - name: Set Version
-        uses: datamonsters/replace-action@v4
+        uses: datamonsters/replace-action@v2
         with:
           files: 'pom.xml'
           replacements: 'Snapshot=${{ github.event.inputs.version_number }}'
