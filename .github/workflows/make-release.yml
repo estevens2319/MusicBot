@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '11'
-          distribution: 'temurin'
+          distribution: 'adopt'
           cache: 'maven'
       - name: Set Version
         uses: datamonsters/replace-action@v2
